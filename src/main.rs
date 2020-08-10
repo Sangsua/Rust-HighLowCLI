@@ -7,13 +7,22 @@ fn main() {
 
     let mut rng = rand::thread_rng();
 
-    // println!("{}",number);
-    //gameloop
-
     let mut game_loop_done; 
+    let mut lives = 8;
+    // game start
+    // game start
+    // game start
+    // game start
+    // game start
+    // game start
+
     'gameloop : loop {
+        lives = 8;
         let number = rng.gen_range(1, 100) as i32;
         println!("please insert a number between 1 and 100");
+        println!("you have 8 lives");
+        println!("");
+
         'inputloop : loop {
             game_loop_done = false;
             let mut input = String::new();
@@ -38,11 +47,21 @@ fn main() {
                         game_loop_done = true;
                     } else if n < number {
                         println!("Number is bigger!" );
+                        lives -= 1;
+                        println!("Lives: {}",lives );
+                        
+                        
                     } else if n > number {
                         println!("number is smaller");
+                        lives -= 1;
+                        println!("Lives: {}",lives );
                     }
                 }
                 Err(error) => println!(" error: {}", error),
+            }
+            if lives == 0 {
+                println!("you died in a fire");
+                game_loop_done= true;
             }
             if game_loop_done{
                 println!("do you want to continue?");
