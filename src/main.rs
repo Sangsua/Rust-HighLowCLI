@@ -4,16 +4,11 @@ use std::cmp::Ordering;
 fn main() {
     //high low game
     //needed values
-
     let mut rng = rand::thread_rng();
 
     let mut game_loop_done : bool; 
     let mut lives :i32;
-    // game start
-    // game start
-    // game start
-    // game start
-    // game start
+
     // game start
 
     'gameloop : loop {
