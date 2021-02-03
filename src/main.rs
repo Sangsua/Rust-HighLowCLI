@@ -27,19 +27,10 @@ fn main() {
             game_loop_done = false;
             let mut input = String::new();
             stdin().read_line(&mut input).expect("failed to read_line");
+            //trim the number from whitespaces
             let input_trimmed = input.trim();
-            // let input_parsed = input_trimmed.parse::<i32>();
-            // match input_parsed {
-            //     Ok(n) => {
-            //         println!("Number {} is ok" , n);
-            //         println!();
-            //     }
-            //     Err(error) => {
-            //         println!("number is not ok => error : {}",error);
-            //         break;
-
-            //     }
-            // }
+            
+            //match, check if the number is correct and compare to searched number 
             match input_trimmed.parse::<i32>() {
                 Ok(n) => {
                     //                    if n == number {
